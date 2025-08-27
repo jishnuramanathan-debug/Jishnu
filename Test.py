@@ -26,6 +26,18 @@ def passwort_hinzufuegen():
     print(f"Passwort für {service} gespeichert!")
 
 
+
+
+def passwort_merken():
+    service = input("Soll icj das Passwort merken? ja/nein : ")
+    if  service == "ja":
+        print("Das Passwort wird gespeichert!")
+    elif service =="nein":  
+        print("Das Passwort wird sich nicht gemerkt!")
+    else:
+        print("Bitte schreib ja oder nein")
+
+
 def passwort_abrufen():
     service = input("Für welchen Dienst? ")
     if service in passwoerter:
@@ -52,6 +64,7 @@ while True:
     print("2. Passwort abrufen")
     print("3. Passwort löschen")
     print("4. Beenden")
+    print("5. Passwort merken")
     wahl = input("Auswahl: ")
     
     if wahl == "1":
@@ -62,5 +75,7 @@ while True:
         passwort_loeschen()
     elif wahl == "4":
         break
+    elif wahl =="5":
+        passwort_merken()
     else:
         print("Ungültige Auswahl.")
