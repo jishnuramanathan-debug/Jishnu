@@ -1,0 +1,26 @@
+-- Create a database
+CREATE DATABASE PasswortManager;
+GO
+
+-- Use it
+USE PasswortManager;
+GO
+
+-- Create your table
+CREATE TABLE dbo.passwoerter (
+    dienst   NVARCHAR(255) PRIMARY KEY,
+    benutzer NVARCHAR(255) NOT NULL,
+    passwort NVARCHAR(255) NOT NULL
+);
+GO
+
+-- (Optional) sample ops
+INSERT INTO dbo.passwoerter (dienst, benutzer, passwort)
+VALUES (N'Dienstname', N'Benutzername', N'Passwort');
+
+SELECT benutzer, passwort
+FROM dbo.passwoerter
+WHERE dienst = N'Dienstname';
+
+DELETE FROM dbo.passwoerter
+WHERE dienst = N'Dienstname';
